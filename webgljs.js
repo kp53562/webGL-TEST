@@ -1,3 +1,5 @@
+import { initBuffers } from "./init-buffers.js";
+import { drawScene } from "./drawscene.js";
 
 main();
 //
@@ -60,6 +62,13 @@ function loadShader(gl, type, source) {
 // start main
 //
 function main() {
+  // Here's where we call the routine that builds all the
+// objects we'll be drawing.
+const buffers = initBuffers(gl);
+
+// Draw the scene
+drawScene(gl, programInfo, buffers);
+
   // Vertex shader program
 const vsSource = `
     attribute vec4 aVertexPosition;
