@@ -1,9 +1,13 @@
 function initBuffers(gl) {
   const positionBuffer = initPositionBuffer(gl);
 
+  const colorBuffer = initColorBuffer(gl);
+
   return {
     position: positionBuffer,
+    color: colorBuffer,
   };
+
 }
 
 function initColorBuffer(gl) {
